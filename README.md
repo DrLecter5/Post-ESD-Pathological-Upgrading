@@ -1,15 +1,23 @@
-更新说明（v2）
+# 病理升级在线预测平台 
+ 
+- 不依赖 `scikit-learn`
+- 不依赖 `torch`
+- 不在云端重新拟合模型
+- 直接使用锁定的 logistic-style 系数进行在线计算
+- 更适合给审稿人直接打开链接
 
-这版会优先读取以下文件来重建训练/验证队列：
-- Training_Cohort_Patients.csv
-- Internal_Validation_Patients.csv
-- External_Validation_Patients.csv
+## 适合上传到 GitHub 仓库的文件
+- `pathology_upgrade_streamlit_public_review_nosklearn.py`
+- `requirements.txt`
+- `Training_Cohort_Patients.csv`
+- `Internal_Validation_Patients.csv`
+- `External_Validation_Patients.csv`
 
-核心逻辑：
-1. 把原始变量来源表（训练集.xlsx + 验证集.xlsx）先合并成总池
-2. 再按新的 cohort 名单重新划分
-3. 网站中的模型训练只用 Training_Cohort_Patients.csv 对应患者
-4. Internal / External 名单仅用于页面说明，不参与重新拟合
+## 部署到 Streamlit Cloud
+1. 将主程序文件上传到 GitHub 仓库根目录  
+2. 将 `requirements_public_review_nosklearn.txt` 重命名为 `requirements.txt`  
+3. 在 Streamlit Community Cloud 选择主文件：
+   `pathology_upgrade_streamlit_public_review_nosklearn.py`
+4. Deploy
 
-因此，如果你已经把一部分病人转为外部验证，建议使用这版。
-
+ 
