@@ -15,7 +15,7 @@
 
 ## 部署到 Streamlit Cloud
 1. 将主程序文件上传到 GitHub 仓库根目录  
-2. 将 `requirements_public_review_nosklearn.txt` 重命名为 `requirements.txt`  
+2.  `requirements.txt`  
 3. 在 Streamlit Community Cloud 选择主文件：
    `pathology_upgrade_streamlit_public_review_nosklearn.py`
 4. Deploy
